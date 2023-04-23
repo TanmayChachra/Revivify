@@ -9,8 +9,11 @@
 
     <FrameLayout
         android:id="@+id/frameLayout3"
-        android:layout_width="391dp"
-        android:layout_height="408dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/tofeature2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,14 +21,19 @@
 
         <ImageView
             android:id="@+id/result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_launcher_background" />
     </FrameLayout>
 
     <Button
         android:id="@+id/tofeature2"
-        android:layout_width="391dp"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="10dp"
         android:text="Edit Image"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,8 +41,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="391dp"
+        android:layout_width="390dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="20dp"
         android:text="Finalize Result"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

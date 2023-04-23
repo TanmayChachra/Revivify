@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 public class MainActivity2 extends AppCompatActivity {
     ImageView result;
+    public Uri img1;
     Button edit,button2;
     static boolean fromsecondpage;
 
@@ -25,8 +26,6 @@ public class MainActivity2 extends AppCompatActivity {
                 .start();
 
         edit = findViewById(R.id.tofeature2);
-        button2 = findViewById(R.id.button2);
-
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        button2 = findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,19 +48,27 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Uri img1 = data.getData();
+        img1 = data.getData();
         result = findViewById(R.id.result);
         result.setImageURI(img1);
+        result.setVisibility(View.VISIBLE);
 
     }
 
     public void feature2(View view){
-        Intent intent = new Intent(this , MainActivity3.class);
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setClass(this , MainActivity3.class);
+        intent.putExtra("KEY",img1);
         startActivity(intent);
     }
 
     public void lastPage(View view){
-        Intent intent = new Intent(this , OutcomePage.class);
-        startActivity(intent);
+        Intent intent_lastPage = new Intent(Intent.ACTION_VIEW);
+        intent_lastPage.setClass(this , OutcomePage.class);
+        String stringUri = img1.toString();
+        intent_lastPage.putExtra("KEY",stringUri);
+        startActivity(intent_lastPage);
+
+
     }
 }
