@@ -1,27 +1,25 @@
 package com.example.revivify3;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import java.io.OutputStream;
 import java.util.Objects;
 
@@ -42,6 +40,15 @@ public class OutcomePage extends AppCompatActivity {
             Uri result= Uri.parse(extras.getString("KEY"));
             image = findViewById(R.id.imageView2);
             image.setImageURI(result);
+            image.setVisibility(View.VISIBLE);
+        }
+        else if(extras != null && extras.containsKey("Image")){
+            //Toast.makeText(this, "Yaha tak chal rha hai", Toast.LENGTH_SHORT).show();
+            Bitmap result = BitmapFactory.decodeByteArray(
+                    getIntent().getByteArrayExtra("Image"),0,getIntent()
+                            .getByteArrayExtra("Image").length);
+            image = findViewById(R.id.imageView2);
+            image.setImageBitmap(result);
             image.setVisibility(View.VISIBLE);
         }
 
@@ -101,5 +108,5 @@ public class OutcomePage extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 }
+

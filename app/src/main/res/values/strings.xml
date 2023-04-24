@@ -9,4 +9,11 @@
     <string name="exposure">adjust_exposure</string>
     <string name="saturation">adjust_saturation</string>
     <string name="sharpen">adjust_sharpness</string>
+    <string name="tick">tick</string>
+    <string name="cross_btn">cross_btn</string>
+    <string name="warmth">warmth</string>
+    <string name="brightness">brightness</string>
+    <string name="edit_image_btn">Edit Image</string>
+    <string name="placeholder">placeholder</string>
+    <string name="finalize_result">Finalize Result</string>
 </resources>

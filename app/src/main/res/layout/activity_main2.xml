@@ -7,49 +7,46 @@
     android:background="@color/black"
     tools:context=".MainActivity2">
 
-    <FrameLayout
-        android:id="@+id/frameLayout3"
+    <ImageView
+        android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/placeholder"
+        android:maxWidth="360dp"
+        android:maxHeight="700dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/tofeature2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/ic_launcher_background" />
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
 
     <Button
         android:id="@+id/tofeature2"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="10dp"
-        android:text="Edit Image"
+        android:text="@string/edit_image_btn"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="20dp"
-        android:text="Finalize Result"
+        android:text="@string/finalize_result"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
